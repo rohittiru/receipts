@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "receipts-cli"
+version = "0.1.0"
+description = "Catch AI coding agents lying about test runs. Signed proof-of-work receipts for agent actions."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [{ name = "receipts contributors" }]
+keywords = ["ai", "agents", "verification", "claude-code", "aider", "testing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    "PyYAML>=6.0",
+    "PyNaCl>=1.5",
+]
+
+[project.scripts]
+receipts = "receipts.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/receipts-spec/receipts"
+Issues = "https://github.com/receipts-spec/receipts/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+receipts = ["shims/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
