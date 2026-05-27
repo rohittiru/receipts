@@ -61,7 +61,7 @@ pip install receipts-cli
 For now:
 
 ```bash
-git clone https://github.com/<you>/receipts
+git clone https://github.com/rohittiru/receipts
 cd receipts
 pip install -e .
 ```
